@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_181" class="java.beans.XMLDecoder">
+ <object class="Entidades.ListaUsuarios" id="ListaUsuarios0">
+  <void property="lista">
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="cantidadVecesGanadas">
+      <int>37</int>
+     </void>
+     <void property="clave">
+      <string>lulo</string>
+     </void>
+     <void property="mail">
+      <string>lulo</string>
+     </void>
+     <void property="nombre">
+      <string>lulo</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="cantidadVecesGanadas">
+      <int>4</int>
+     </void>
+     <void property="clave">
+      <string>1234</string>
+     </void>
+     <void property="mail">
+      <string>mapa@hotmail.com</string>
+     </void>
+     <void property="nombre">
+      <string>mapa</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="cantidadVecesGanadas">
+      <int>4</int>
+     </void>
+     <void property="clave">
+      <string>12345</string>
+     </void>
+     <void property="mail">
+      <string>jjjj@jjj</string>
+     </void>
+     <void property="nombre">
+      <string>german</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="cantidadVecesGanadas">
+      <int>1</int>
+     </void>
+     <void property="clave">
+      <string>1234</string>
+     </void>
+     <void property="mail">
+      <string>bdfsmjbdfsmj</string>
+     </void>
+     <void property="nombre">
+      <string>Brenda</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>lala</string>
+     </void>
+     <void property="mail">
+      <string>lala</string>
+     </void>
+     <void property="nombre">
+      <string>lala</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>lili</string>
+     </void>
+     <void property="mail">
+      <string>lili</string>
+     </void>
+     <void property="nombre">
+      <string>lili</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>lplp</string>
+     </void>
+     <void property="mail">
+      <string>lplp</string>
+     </void>
+     <void property="nombre">
+      <string>lplp</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>hola</string>
+     </void>
+     <void property="mail">
+      <string>ponti</string>
+     </void>
+     <void property="nombre">
+      <string>nano</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>loco</string>
+     </void>
+     <void property="mail">
+      <string>loco</string>
+     </void>
+     <void property="nombre">
+      <string>loco</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>lola</string>
+     </void>
+     <void property="mail">
+      <string>lola</string>
+     </void>
+     <void property="nombre">
+      <string>lola</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>1234</string>
+     </void>
+     <void property="mail">
+      <string>lucila</string>
+     </void>
+     <void property="nombre">
+      <string>lucila</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>mecon</string>
+     </void>
+     <void property="mail">
+      <string>ddd</string>
+     </void>
+     <void property="nombre">
+      <string>vicky</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Entidades.Usuario">
+     <void property="clave">
+      <string>lolo</string>
+     </void>
+     <void property="mail">
+      <string>lolo</string>
+     </void>
+     <void property="nombre">
+      <string>lolo</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
