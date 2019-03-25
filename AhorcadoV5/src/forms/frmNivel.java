@@ -59,6 +59,7 @@ public class frmNivel extends javax.swing.JDialog
         jCheckBox1.setText("jCheckBox1");
 
         setAlwaysOnTop(true);
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter()
         {
             public void windowOpened(java.awt.event.WindowEvent evt)

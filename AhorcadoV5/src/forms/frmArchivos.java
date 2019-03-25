@@ -52,6 +52,7 @@ public class frmArchivos extends javax.swing.JDialog
         elegirArchivo = new javax.swing.JFileChooser();
 
         setMaximumSize(new java.awt.Dimension(602, 397));
+        setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter()
         {

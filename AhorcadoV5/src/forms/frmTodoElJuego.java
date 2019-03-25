@@ -58,7 +58,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
     Container cp = null;
     Container cr = null;
     KeyEvent lele;
-    
+
     private ListaUsuarios listaUsu;
     private Usuario usuarioElegido;
 
@@ -91,9 +91,11 @@ public class frmTodoElJuego extends javax.swing.JFrame
         Password = new javax.swing.JPasswordField();
         lblConf = new javax.swing.JLabel();
         jpRanking = new javax.swing.JPanel();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(920, 620));
+        setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter()
         {
@@ -305,14 +307,27 @@ public class frmTodoElJuego extends javax.swing.JFrame
             .addGap(0, 598, Short.MAX_VALUE)
         );
 
+        btnCerrar.setText("jButton1");
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
+                .addContainerGap(192, Short.MAX_VALUE)
                 .addComponent(jpRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
+                .addGap(58, 58, 58)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(51, Short.MAX_VALUE)
@@ -326,10 +341,13 @@ public class frmTodoElJuego extends javax.swing.JFrame
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpRanking, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(33, Short.MAX_VALUE)
@@ -349,6 +367,8 @@ public class frmTodoElJuego extends javax.swing.JFrame
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
     {//GEN-HEADEREND:event_formWindowOpened
 //iconos
+        this.btnCerrar.setIcon(new ImageIcon("cerrar-10.png"));
+        this.btnCerrar.setRolloverIcon(new ImageIcon("cerrar-11.png"));
         this.btnConfig.setIcon(new ImageIcon("usuario-04.png"));
         this.btnConfig.setRolloverIcon(new ImageIcon("usuario-05.png"));
         this.btnConfig.setPressedIcon(new ImageIcon("usuario-06.png"));
@@ -363,10 +383,10 @@ public class frmTodoElJuego extends javax.swing.JFrame
 //dibujo juego
         this.lblConf.setIcon(horca);
         this.lblConf.setSize(35, 35);
-        
+
         this.jpLogIn.setVisible(true);
-        this.jpRanking.setVisible(false);        
-        
+        this.jpRanking.setVisible(false);
+
         this.jpJuego.setVisible(false);
         this.Password.setForeground(new Color(178, 178, 178));// TODO add your handling code here:
         this.Password.addFocusListener(new FocusListener()
@@ -376,7 +396,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
             {
                 limpiarPassText();
             }
-            
+
             @Override
             public void focusLost(FocusEvent e)
             {
@@ -390,7 +410,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
             {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void keyPressed(KeyEvent e)
             {
@@ -399,7 +419,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
                     jugarTodo();
                 }
             }
-            
+
             @Override
             public void keyReleased(KeyEvent e)
             {
@@ -426,7 +446,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
 
     private void jpJuegoMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jpJuegoMouseClicked
     {//GEN-HEADEREND:event_jpJuegoMouseClicked
-        
+
 
     }//GEN-LAST:event_jpJuegoMouseClicked
 
@@ -436,11 +456,11 @@ public class frmTodoElJuego extends javax.swing.JFrame
         nuevoDiccionario.setVisible(true);
         if (nuevoDiccionario.isDialog)
         {
-            
+
         }
         else if (nuevoDiccionario.isCancel)
         {
-            
+
         }
     }//GEN-LAST:event_lblConfMouseReleased
 
@@ -451,10 +471,10 @@ public class frmTodoElJuego extends javax.swing.JFrame
 
     private void btnConfigActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnConfigActionPerformed
     {//GEN-HEADEREND:event_btnConfigActionPerformed
-        
+
         this.btnConfig.setBackground(new Color(35, 44, 105));
         this.btnConfig.setIcon(new ImageIcon("usuario-06.png"));
-        
+
         frmNuevoUsuario nuevoUsuario = new frmNuevoUsuario(this, true, 0);
         nuevoUsuario.setVisible(true);
         if (nuevoUsuario.isIsDialog())
@@ -491,6 +511,16 @@ public class frmTodoElJuego extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordActionPerformed
 
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarActionPerformed
+    {//GEN-HEADEREND:event_btnCerrarActionPerformed
+        switch (JOptionPane.showConfirmDialog(null, "Seguro desea salir?"))
+        {
+            case 0:
+                this.dispose();
+                break;
+        }
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -509,7 +539,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
                 {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         }
@@ -517,19 +547,19 @@ public class frmTodoElJuego extends javax.swing.JFrame
         {
             java.util.logging.Logger.getLogger(frmTodoElJuego.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         }
         catch (InstantiationException ex)
         {
             java.util.logging.Logger.getLogger(frmTodoElJuego.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         }
         catch (IllegalAccessException ex)
         {
             java.util.logging.Logger.getLogger(frmTodoElJuego.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         }
         catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
@@ -564,13 +594,13 @@ public class frmTodoElJuego extends javax.swing.JFrame
         this.textUsuario.setText("");
         this.Password.setText("");
     }
-    
+
     private void limpiarPassText()
     {
         this.Password.setForeground(new Color(0, 0, 0));
         this.Password.setText("");
     }
-    
+
     private void mostrarPuntaje()
     {
         this.jpLogIn.setVisible(false);
@@ -591,36 +621,36 @@ public class frmTodoElJuego extends javax.swing.JFrame
             {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void componentMoved(ComponentEvent e)
             {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void componentShown(ComponentEvent e)
             {
                 // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void componentHidden(ComponentEvent e)
             {
                 if (nuevoRanking.getResp() == 0)
                 {
-                    volverInicio();                    
+                    volverInicio();
                 }
                 if (nuevoRanking.getResp() == 1)
                 {
-                    jugarTodo();                    
+                    jugarTodo();
                 }
             }
         });
         nuevoRanking.setVisible(true);
-        
+
     }
-    
+
     private void empezarJuego() throws DiccionaUsado
     {
         this.jpJuego.setVisible(true);
@@ -633,31 +663,31 @@ public class frmTodoElJuego extends javax.swing.JFrame
             {
                 //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void componentMoved(ComponentEvent e)
             {
                 // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-            
+
             @Override
             public void componentShown(ComponentEvent e)
             {
-                
+
             }
-            
+
             @Override
             public void componentHidden(ComponentEvent e)
             {
                 mostrarPuntaje();
             }
         });
-        
+
         cp.add(jugar);
 
         //    this.jugar.limpiarJuego();
     }
-    
+
     private boolean ingresarUsuario() throws UsuarioNoEncontrado, ClaveIncorrecta
     {
         boolean resp = false;
@@ -667,11 +697,11 @@ public class frmTodoElJuego extends javax.swing.JFrame
         {
             resp = true;
         }
-        
+
         return resp;
-        
+
     }
-    
+
     private void jugarTodo()
     {
         try
@@ -681,13 +711,13 @@ public class frmTodoElJuego extends javax.swing.JFrame
                 this.jpLogIn.setVisible(false);
                 nivel = new frmNivel(this, true);
                 nivel.setVisible(true);
-                if (cp != null && cr!= null)
+                if (cp != null && cr != null)
                 {
                     cp.removeAll();//////////////////container very importaNTE   
                     cr.removeAll();
-                    
-                }                
-                
+
+                }
+
                 cp = this.jpJuego;
                 GridLayout gl = new GridLayout(1, 1);
                 cp.setLayout(gl);
@@ -706,10 +736,10 @@ public class frmTodoElJuego extends javax.swing.JFrame
                 else
                 {
                     nivel.dispose();
-                    this.usuarioElegido=null;
+                    this.usuarioElegido = null;
                     volverInicio();
                 }
-                
+
             }
         }
         catch (UsuarioNoEncontrado | ClaveIncorrecta ex)
@@ -717,13 +747,12 @@ public class frmTodoElJuego extends javax.swing.JFrame
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
-    
-   
 
     // </editor-fold>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Password;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnConfig;
     private javax.swing.JButton btnJugar;
     private javax.swing.JSeparator jSeparator1;

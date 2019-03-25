@@ -81,6 +81,7 @@ public class frmNuevoUsuario extends javax.swing.JDialog
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(488, 354));
         setMinimumSize(new java.awt.Dimension(488, 354));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(488, 354));
         addWindowListener(new java.awt.event.WindowAdapter()
         {
