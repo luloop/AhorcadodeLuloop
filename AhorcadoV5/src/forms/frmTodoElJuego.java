@@ -6,43 +6,25 @@
 package forms;
 
 import Excepciones.DiccionaUsado;
-import Excepciones.maxFallos;
-import Entidades.Juego;
 import Entidades.ListaUsuarios;
 import Entidades.Usuario;
 import Excepciones.ClaveIncorrecta;
 import Excepciones.UsuarioNoEncontrado;
-import forms.frmNivel;
-import java.awt.AWTEventMulticaster;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.MouseInputListener;
+import javax.swing.UIManager;
 
 /**
  *
@@ -513,12 +495,16 @@ public class frmTodoElJuego extends javax.swing.JFrame
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarActionPerformed
     {//GEN-HEADEREND:event_btnCerrarActionPerformed
-        switch (JOptionPane.showConfirmDialog(null, "Seguro desea salir?"))
+        frmAceptarCancelar cerrar = new frmAceptarCancelar(this, true, "Seguro desea salir?");
+        cerrar.setVisible(true);
+        if (cerrar.isDialogResult == true)
         {
-            case 0:
-                this.dispose();
-                break;
+            this.removeAll();
+            this.dispose();
+            System.exit(0);
         }
+
+
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
@@ -691,7 +677,7 @@ public class frmTodoElJuego extends javax.swing.JFrame
     private boolean ingresarUsuario() throws UsuarioNoEncontrado, ClaveIncorrecta
     {
         boolean resp = false;
-        this.listaUsu = ListaUsuarios.cargarUsuarios(ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+        this.listaUsu = ListaUsuarios.cargarUsuarios(ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
         this.usuarioElegido = listaUsu.validarListaUsuarios(this.textUsuario.getText(), this.Password.getText());
         if (this.usuarioElegido != null)
         {
@@ -744,7 +730,9 @@ public class frmTodoElJuego extends javax.swing.JFrame
         }
         catch (UsuarioNoEncontrado | ClaveIncorrecta ex)
         {
-            JOptionPane.showMessageDialog(this, ex.getMessage());
+            frmAceptar cerrar = new frmAceptar(this, true, ex.getMessage());
+            cerrar.setVisible(true);
+            
         }
     }
 

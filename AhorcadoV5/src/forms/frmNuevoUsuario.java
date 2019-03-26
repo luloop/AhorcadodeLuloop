@@ -9,8 +9,8 @@ import Excepciones.PalabraNoEncontrada;
 import Excepciones.ClaveIncorrecta;
 import Excepciones.UsuarioNoEncontrado;
 import Excepciones.UsuarioRepetido;
-import ahorcadov4.Ahorcadov4;
-import static ahorcadov4.Ahorcadov4.USUARIO_ARCH;
+import ahorcadoV5.Ahorcadov4;
+import static ahorcadoV5.Ahorcadov4.USUARIO_ARCH;
 import Entidades.Diccionario;
 import Entidades.ListaUsuarios;
 import Entidades.Usuario;
@@ -238,7 +238,7 @@ public class frmNuevoUsuario extends javax.swing.JDialog
 
     private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
     {//GEN-HEADEREND:event_formWindowOpened
-        todosUsuarios = ListaUsuarios.cargarUsuarios(ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+        todosUsuarios = ListaUsuarios.cargarUsuarios(ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
         System.out.println(todosUsuarios.toString());
         this.texClave.setText("");
          this.texClave.addFocusListener(new FocusListener()
@@ -472,7 +472,7 @@ public class frmNuevoUsuario extends javax.swing.JDialog
                                 this.todosUsuarios.agregar(new Usuario(this.txNombre.getText(), this.texClave.getText(), this.txMail.getText()));
                                 JOptionPane.showMessageDialog(this, "Usuario Agregado");
 
-                                if (ListaUsuarios.guardarUsuarios(this.todosUsuarios, ahorcadov4.Ahorcadov4.USUARIO_ARCH))
+                                if (ListaUsuarios.guardarUsuarios(this.todosUsuarios, ahorcadoV5.Ahorcadov4.USUARIO_ARCH))
                                 {
                                     System.out.println("Lista Guardada con Exito");
                                 }

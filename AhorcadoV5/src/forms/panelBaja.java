@@ -229,7 +229,7 @@ public class panelBaja extends javax.swing.JPanel
     private void borrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_borrarActionPerformed
     {//GEN-HEADEREND:event_borrarActionPerformed
      this.diccionario.getLista().remove(this.comboPalabras1.getSelectedIndex());
-     Diccionario.guardarArchivoDiccionario(this.diccionario, ahorcadov4.Ahorcadov4.DICC_ARCH);     
+     Diccionario.guardarArchivoDiccionario(this.diccionario, ahorcadoV5.Ahorcadov4.DICC_ARCH);     
       this.setVisible(false);
     }//GEN-LAST:event_borrarActionPerformed
 

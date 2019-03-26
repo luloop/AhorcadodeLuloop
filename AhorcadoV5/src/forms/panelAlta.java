@@ -8,7 +8,7 @@ package forms;
 import Entidades.Diccionario;
 import Entidades.Palabra;
 import Excepciones.PalabraNoEncontrada;
-import ahorcadov4.Ahorcadov4;
+import ahorcadoV5.Ahorcadov4;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;

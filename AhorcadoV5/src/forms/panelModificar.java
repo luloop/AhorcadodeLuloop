@@ -217,7 +217,7 @@ public class panelModificar extends javax.swing.JPanel
         palabra.setDificultad(comboDificil.getSelectedIndex());
         palabra.setPista(txtPista.getText());
         this.diccionario.getLista().add(palabra);
-        Diccionario.guardarArchivoDiccionario(this.diccionario, ahorcadov4.Ahorcadov4.DICC_ARCH);
+        Diccionario.guardarArchivoDiccionario(this.diccionario, ahorcadoV5.Ahorcadov4.DICC_ARCH);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_guardarActionPerformed
 

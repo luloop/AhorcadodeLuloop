@@ -34,7 +34,7 @@ public class Juego
 
     public Juego(Usuario usuario, int nivel) throws DiccionaUsado
     {
-        this.granDiccionario = Diccionario.cargarDiccionario(ahorcadov4.Ahorcadov4.DICC_ARCH);
+        this.granDiccionario = Diccionario.cargarDiccionario(ahorcadoV5.Ahorcadov4.DICC_ARCH);
         this.filtrado = granDiccionario.armarDiccionarioNivel(nivel);
         this.cantidadMaximaDFallos = this.cantidadFallos(nivel);
         this.elegida = this.filtrado.elegirPalabraRandom();

@@ -252,7 +252,7 @@ public class frmAbmDiccionario extends javax.swing.JDialog
         this.lblTitulo.setIcon(new ImageIcon("diccionario-12.png"));
 
         this.PanelABM.setVisible(false);
-        this.diccionarioEntero = Diccionario.cargarDiccionario(ahorcadov4.Ahorcadov4.DICC_ARCH);
+        this.diccionarioEntero = Diccionario.cargarDiccionario(ahorcadoV5.Ahorcadov4.DICC_ARCH);
         this.btnAceptar.setIcon(new ImageIcon("botones-13.png"));
         this.btnAceptar.setRolloverIcon(new ImageIcon("botones-14.png"));
 
@@ -297,15 +297,15 @@ public class frmAbmDiccionario extends javax.swing.JDialog
 
     private void btnXML1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnXML1ActionPerformed
     {//GEN-HEADEREND:event_btnXML1ActionPerformed
-        frmArchivos archivo = new frmArchivos(null, true, ahorcadov4.Ahorcadov4.DICC_ARCH);
+        frmArchivos archivo = new frmArchivos(null, true, ahorcadoV5.Ahorcadov4.DICC_ARCH);
         archivo.setVisible(true);
         if (archivo.isIsDialog())
         {
-            ahorcadov4.Ahorcadov4.cambiarNombreArchivoDiccionario(archivo.getNombreArchivoNUevo());
+            ahorcadoV5.Ahorcadov4.cambiarNombreArchivoDiccionario(archivo.getNombreArchivoNUevo());
         }
         if(archivo.isIsCancel())
         {
-            ahorcadov4.Ahorcadov4.cambiarNombreArchivoDiccionario(ahorcadov4.Ahorcadov4.DICC_ARCH);
+            ahorcadoV5.Ahorcadov4.cambiarNombreArchivoDiccionario(ahorcadoV5.Ahorcadov4.DICC_ARCH);
         }
     }//GEN-LAST:event_btnXML1ActionPerformed
 

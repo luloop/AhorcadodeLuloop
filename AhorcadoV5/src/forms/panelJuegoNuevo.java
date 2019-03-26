@@ -58,13 +58,60 @@ public class panelJuegoNuevo extends javax.swing.JPanel
 
     public panelJuegoNuevo(int nivel, Usuario user) throws DiccionaUsado
     {
-        escucharTeclado(); //ESTO NO ANDA
-//        
 
         this.jnivel = nivel;
         this.usuarioActivo = user;
         initComponents();
         empezarTodo();
+
+        this.setFocusable(true);
+        this.addKeyListener(new KeyListener()
+        {
+            @Override
+            public void keyTyped(KeyEvent e)
+            {
+                try
+                {
+                    System.out.println((char) e.getKeyCode());
+                    presionarTecla((char) e.getKeyCode());
+
+                }
+                catch (DiccionaUsado ex)
+                {
+                    //Logger.getLogger(panelJuegoNuevo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                catch (maxFallos ex)
+                {
+                    // Logger.getLogger(panelJuegoNuevo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e)
+            {
+                try
+                {
+                    System.out.println((char) e.getKeyCode());
+                    presionarTecla((char) e.getKeyCode());
+
+                }
+                catch (DiccionaUsado ex)
+                {
+                    //Logger.getLogger(panelJuegoNuevo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                catch (maxFallos ex)
+                {
+                    // Logger.getLogger(panelJuegoNuevo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e)
+            {
+                // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
 
     }
 
@@ -278,13 +325,19 @@ public class panelJuegoNuevo extends javax.swing.JPanel
 
     private void btnRendirseActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRendirseActionPerformed
     {//GEN-HEADEREND:event_btnRendirseActionPerformed
-        int resp = JOptionPane.showConfirmDialog(this, " Te rendiste la palabra \n SEGURO");
-        // 0=yes, 1=no, 2=cancel
-        if (resp == 0)
+        frmAceptarCancelar seguro = new frmAceptarCancelar(null, true, " Te rendiste la palabra \n SEGURO");
+        seguro.setVisible(true);
+        if (seguro.isDialogResult == true)
         {
-            JOptionPane.showMessageDialog(this, " Te rendiste la palabra era!\n" + this.juego.getElegida().getPalabra().toUpperCase());
-            this.setVisible(false);
+
+            frmAceptar respuesta = new frmAceptar(null, true, " Te rendiste la palabra era!\n" + this.juego.getElegida().getPalabra().toUpperCase());
+            respuesta.setVisible(true);
+            if (seguro.isDialogResult == true)
+            {
+                this.setVisible(false);
+            }
         }
+
     }//GEN-LAST:event_btnRendirseActionPerformed
 
     private void jIntentosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jIntentosActionPerformed
@@ -450,7 +503,9 @@ public class panelJuegoNuevo extends javax.swing.JPanel
         if (this.juego.validarAciertoJuego())
         {
             sonido(3);
-            JOptionPane.showMessageDialog(this, " Excelente!\n" + this.juego.getElegida().getPalabra().toUpperCase());
+            frmAceptar aceptar = new frmAceptar(null, true, " Excelente!\n" + this.juego.getElegida().getPalabra().toUpperCase());
+            aceptar.setVisible(true);
+            // JOptionPane.showMessageDialog(this, " Excelente!\n" + this.juego.getElegida().getPalabra().toUpperCase());
             if (this.juego.proximaPalabra())
             {
                 limpiarJuego();
@@ -497,7 +552,9 @@ public class panelJuegoNuevo extends javax.swing.JPanel
 
         if (this.juego.validarAciertoJuego())
         {
-            JOptionPane.showMessageDialog(this, " Excelente!\n" + this.juego.getElegida().getPalabra().toUpperCase());
+            frmAceptar aceptar = new frmAceptar(null, true, " Excelente!\n" + this.juego.getElegida().getPalabra().toUpperCase());
+            aceptar.setVisible(true);
+
             if (this.juego.proximaPalabra())
             {
                 limpiarJuego();
@@ -519,7 +576,7 @@ public class panelJuegoNuevo extends javax.swing.JPanel
 
         this.barProg.setMaximum(this.juego.getCantidadMaximaDFallos());
         this.barProg.setValue(this.juego.getContadorFallos());
-      
+
         switch (this.jnivel)
         {
             case 0:
@@ -543,7 +600,6 @@ public class panelJuegoNuevo extends javax.swing.JPanel
                 break;
         }
     }
-
 
     public void actualizarHorca(int intento)
     {
@@ -610,10 +666,12 @@ public class panelJuegoNuevo extends javax.swing.JPanel
         {
             this.lblImagen.setIcon(new ImageIcon("jpg\\horca" + numero + ".png"));
             this.barProg.setValue(this.juego.getCantidadMaximaDFallos());
-            JOptionPane.showMessageDialog(this, respuesta);
-            ListaUsuarios listausuario = ListaUsuarios.cargarUsuarios(ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+            frmAceptar aceptar = new frmAceptar(null, true, respuesta);
+            aceptar.setVisible(true);
+            //  JOptionPane.showMessageDialog(this, respuesta);
+            ListaUsuarios listausuario = ListaUsuarios.cargarUsuarios(ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
             listausuario.actualizarPuntos(this.usuarioActivo);
-            ListaUsuarios.guardarUsuarios(listausuario, ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+            ListaUsuarios.guardarUsuarios(listausuario, ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
 
             this.setVisible(false);
 
@@ -654,7 +712,7 @@ public class panelJuegoNuevo extends javax.swing.JPanel
         this.jugandoUsuario.setVisible(true);
     }
 
-    private void escucharTeclado()
+    /*  private void escucharTeclado()
     {
         this.addKeyListener(new KeyListener()
         {
@@ -682,14 +740,14 @@ public class panelJuegoNuevo extends javax.swing.JPanel
                     ke.consume();
                 }
             }
-
+            
             @Override
             public void keyPressed(KeyEvent ke)
             {
                 // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
             }
-
+            
             @Override
             public void keyReleased(KeyEvent ke)
             {
@@ -697,7 +755,7 @@ public class panelJuegoNuevo extends javax.swing.JPanel
             }
         });
     }
-
+     */
     public void sonido(int tipo)
     {
         String archSonido = "miniWin.wav";;

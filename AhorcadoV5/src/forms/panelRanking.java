@@ -35,7 +35,7 @@ public class panelRanking extends javax.swing.JPanel
      */
     public panelRanking(Usuario ganadorExt)
     {
-        this.listaFinal = ListaUsuarios.cargarUsuarios(ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+        this.listaFinal = ListaUsuarios.cargarUsuarios(ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
         this.lblGanadores = new JLabel[10];
         initComponents();
         this.lblPuntajes.setIcon(new ImageIcon("puntajes-25.png"));
@@ -201,7 +201,7 @@ public class panelRanking extends javax.swing.JPanel
         {
             this.listaFinal.actualizarPuntos(this.ganador);
             this.listaFinal.getLista().sort(ListaUsuarios.armarRanking);
-            ListaUsuarios.guardarUsuarios(listaFinal, ahorcadov4.Ahorcadov4.USUARIO_ARCH);
+            ListaUsuarios.guardarUsuarios(listaFinal, ahorcadoV5.Ahorcadov4.USUARIO_ARCH);
         }
     }
 
